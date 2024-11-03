@@ -42,7 +42,7 @@ Enter the command (i: insert, d: delete, s: search, r: range query, n: nearest n
 Message will be given asking to select operation.
 
 insert:
-	Enter the number of points to insert and insert the specified number of points.
+	Enter the number of points to insert and insert the specified number of points in space separated format.
 	The point insertion can be dynamically seen in the Octree.txt file. It can also be viewed on terminal that the point is inserted or not and at what depth.
 search:
 	Enter the point to search. Result can be viewed in terminal.
@@ -78,19 +78,19 @@ GIVEN BELOW IS A TEST CASE FOR study_operations.c FUNCTION.
 
 Enter the command (i: insert, d: delete, s: search, r: range query, n: nearest neighbor, f: free, c: collision, q: quit):i
 Enter the number of points to insert: 12
--50 -50 100
-900 -900 -900
-900 900 900
--100 -100 100
--1 2 3
-0 0 0
-750 750 750
-800 800 800
-500 500 500
-750 750 800
-975 975 1000
-1000 1000 975
-
+(-50 -50 100)
+(900 -900 -900)
+(900 900 900)
+(-100 -100 100)
+(-1 2 3)
+(0 0 0)
+(750 750 750)
+(800 800 800)
+(500 500 500)
+(750 750 800)
+(975 975 1000)
+(1000 1000 975)
+*Don't input round brackets
 (each time when you insert a point you can view the octree formed in Octree.txt)
 U can observe node division in the tree.
 
