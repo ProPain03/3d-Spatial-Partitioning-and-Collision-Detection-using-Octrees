@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Spatial Partitioning and Collision Detection</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/controls.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+</head>
+<body>
+    <div id="app">
+        <header class="header">
+            <h1>🎯 3D Spatial Partitioning and Collision Detection using Octrees</h1>
+        </header>
+        
+        <div id="controls" class="controls">
+            <h2>🎮 Controls</h2>
+            <button id="game-mode-btn" class="control-button">🎮 Toggle Game Mode</button>
+            <button id="insert-btn" class="control-button">➕ Insert Point</button>
+            <button id="delete-btn" class="control-button">➖ Delete Point</button>
+            <button id="search-btn" class="control-button">🔍 Search Point</button>
+            <button id="range-btn" class="control-button">📦 Range Query</button>
+            <button id="nearest-btn" class="control-button">🎯 Find Nearest</button>
+            
+            <div id="point-inputs">
+                <input type="number" id="x-input" placeholder="X coordinate" step="0.1">
+                <input type="number" id="y-input" placeholder="Y coordinate" step="0.1">
+                <input type="number" id="z-input" placeholder="Z coordinate" step="0.1">
+                <input type="number" id="range-size" placeholder="Range size (default: 100)" step="10">
+                <input type="number" id="k-nearest" placeholder="K nearest (default: 1)" min="1" max="10">
+            </div>
+            
+            <div class="point-info">
+                <p><strong>🎮 Game Controls:</strong></p>
+                <p>W/S: Move Forward/Backward</p>
+                <p>A/D: Move Left/Right</p>
+                <p>E/F: Move Up/Down</p>
+                <p><strong>🖱️ Mouse:</strong></p>
+                <p>Drag: Rotate view</p>
+                <p>Scroll: Zoom in/out</p>
+            </div>
+        </div>
+        
+        <div id="canvas-container">
+            <!-- Three.js canvas will be added here -->
+        </div>
+        
+        <div id="info" class="info-panel">
+            <h2>ℹ️ Information</h2>
+            <p id="status">Status: Ready</p>
+            <p id="collision-status">Collision Status: None</p>
+            <p id="selected-point">Selected Point: None</p>
+            <p id="point-count">Total Points: 0</p>
+            
+            <div class="legend">
+                <h3>🎨 Legend</h3>
+                <p><span style="color: #ff4444;">●</span> Selected Point (Large)</p>
+                <p><span style="color: #4488ff;">●</span> Regular Points</p>
+                <p><span style="color: #00ff00;">●</span> Search Target</p>
+                <p><span style="color: #ffff00;">●</span> Nearest Neighbors</p>
+                <p><span style="color: #00ffff;">●</span> Range Query Results</p>
+                <p><span style="color: #ff0000;">□</span> Octree Level 0</p>
+                <p><span style="color: #00ff00;">□</span> Octree Level 1</p>
+                <p><span style="color: #0000ff;">□</span> Octree Level 2+</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Load JavaScript modules in correct order -->
+    <script src="js/api-client.js"></script>
+    <script src="js/collision-detector.js"></script>
+    <script src="js/octree-visualizer.js"></script>
+    <script src="js/point-manager.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
