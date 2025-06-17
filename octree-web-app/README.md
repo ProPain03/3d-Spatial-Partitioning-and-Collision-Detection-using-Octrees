@@ -16,19 +16,20 @@ The project is organized into the following directories and files:
 
 ## Setup Instructions
 1. **Compile C files** into shared libraries (.so or .dll) using appropriate commands for your OS.
-2. **Install Python dependencies** using pip:
+2. Go to the octree-web-app directory
+3. **Install Python dependencies** using pip:
    ```
    pip install -r requirements.txt
    ```
-3. **Install npm dependencies** for the frontend (if using a package manager):
+4. **Install npm dependencies** for the frontend (if using a package manager):
    ```
    npm install
    ```
-4. **Run the backend server**:
+5. **Run the backend server**:
    ```
    python backend/app.py
    ```
-5. **Open the frontend** in a web browser to interact with the application.
+6. **Open the frontend** in a web browser to interact with the application.
 
 ## Dependencies
 - Flask or FastAPI
