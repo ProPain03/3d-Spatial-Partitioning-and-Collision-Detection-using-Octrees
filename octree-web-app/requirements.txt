@@ -1,0 +1,7 @@
+Flask==2.3.3
+Flask-Cors==4.0.0
+numpy==1.24.3
+websocket-client==1.6.1
+pytest==7.4.0
+pytest-flask==1.2.1
+python-dotenv==1.0.0
